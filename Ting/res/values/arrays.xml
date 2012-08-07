@@ -9,4 +9,20 @@
         <item >王菲</item>
     </string-array>
 
+    <string-array name="online_music_hot_title">
+        <item >精选专题</item>
+        <item >新歌榜</item>
+        <item >热歌榜</item>
+        <item >新歌速递</item>
+        <item >专辑</item>
+    </string-array>
+    
+    <string-array name="online_music_hot_sub_title">
+        <item >伦敦奥运全攻略 开幕曲全收录</item>
+        <item >伦敦奥运会主题曲《Survival》排名持续上升</item>
+        <item >曲婉婷《我的歌声里》霸占榜首多周</item>
+        <item >独家首发韩庚新单曲《最佳听众》</item>
+        <item >陈冠希联手MC仁、厨房仔，推广东概念大碟</item>
+    </string-array>
+    
 </resources>
