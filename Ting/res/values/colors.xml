@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="color_artist_name">#ffd5d5d5</color>
+     <color name="color_minibar_btn_press">#ff279ce7</color>
+     <color name="color_transparent">#00000000</color>
+</resources>

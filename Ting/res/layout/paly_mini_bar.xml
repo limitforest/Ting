@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@id/play_mini_bar"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/mini_bar_height"
+    android:layout_above="@android:id/tabs"
+    android:background="@drawable/general_playing_blak"
+    android:paddingBottom="3dp"
+    android:paddingLeft="5dp"
+    android:paddingRight="5dp"
+    android:paddingTop="3dp" >
+
+    <ImageView
+        android:id="@+id/mb_music_image"
+        android:layout_height="30dp"
+        android:layout_width="30dp"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:background="@null"
+        android:src="@drawable/general_playing_picture_album" />
+
+    <LinearLayout
+        android:layout_width="100dp"
+        android:layout_height="match_parent"
+        android:layout_toLeftOf="@+id/mb_player_music_control_container"
+        android:layout_toRightOf="@id/mb_music_image"
+        android:orientation="vertical"
+        android:paddingBottom="3dp"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:paddingTop="3dp" >
+
+        <TextView
+            android:id="@+id/mb_player_music_tracktitle"
+            style="@style/TextAppearance"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="marquee"
+            android:singleLine="true"
+            android:text="@string/slogan"
+            android:textSize="16sp"
+            android:textColor="@color/color_artist_name"
+            android:marqueeRepeatLimit="marquee_forever"  />
+
+        <SeekBar
+            android:id="@+id/mb_progress_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxHeight="2dp"
+            android:minHeight="2dp"
+            android:gravity="center"
+            android:progressDrawable="@drawable/seekbar_style_mini"
+            android:thumb="@drawable/general_playing_progress_bar_lightspot" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@id/mb_player_music_control_container"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:gravity="center"
+        android:orientation="horizontal" >
+
+        <ImageButton
+            android:id="@+id/mb_player_music_play_control"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/color_minibar_btn_bg"
+            android:src="@drawable/button_general_mini_playing_play" />
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:src="@drawable/line_list_vertical" />
+
+        <ImageButton
+            android:id="@+id/mb_player_music_paly_next"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/color_minibar_btn_bg"
+            android:src="@drawable/button_general_mini_playing_next"
+            android:scaleType="center" />
+    </LinearLayout>
+
+</RelativeLayout>
