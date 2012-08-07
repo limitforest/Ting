@@ -3,68 +3,49 @@ package com.example.ting;
 import java.util.HashMap;
 
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTransaction;
+import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.Menu;
 import android.view.View;
 import android.widget.TabHost;
 import android.widget.TabHost.TabSpec;
 import android.widget.TabWidget;
 import android.widget.TextView;
 
-public class MainActivity extends FragmentActivity {
+public class LoginActivity extends FragmentActivity {
 
 	TabHost mTabHost;
 	TabManager mTabManager;
 	TabWidget tabWidget;
-
-	@Override
-	public void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
-
-		mTabHost = (TabHost) findViewById(android.R.id.tabhost);
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_login);
+        
+        mTabHost = (TabHost) findViewById(R.id.tabhost);
 		mTabHost.setup();
 
 		mTabManager = new TabManager(this, mTabHost, android.R.id.tabcontent);
 		tabWidget = (TabWidget) findViewById(android.R.id.tabs);
 
-		mTabManager.addTab(tabWidget, getString(R.string.local_music),
-				LocalMusicFragment.class, null);
-		mTabManager.addTab(tabWidget, getString(R.string.my_music),
-				MyMusicFragment.class, null);
-		mTabManager.addTab(tabWidget, getString(R.string.online_music),
-				OnlineMusicFragment.class, null);
-		mTabManager.addTab(tabWidget, getString(R.string.search),
-				SearchFragment.class, null);
+		mTabManager.addTab(tabWidget, getString(R.string.ordinary_login), OrdinaryLoginFragment.class, null);
+		mTabManager.addTab(tabWidget,  getString(R.string.phone_login),PhoneLoginFragment.class, null);
 
 		if (savedInstanceState != null) {
 			mTabHost.setCurrentTabByTag(savedInstanceState.getString("tab"));
 		}
-	}
+    }
 
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		getMenuInflater().inflate(R.menu.activity_main, menu);
-		return true;
-	}
-
-	@Override
+    @Override
 	protected void onSaveInstanceState(Bundle outState) {
 		super.onSaveInstanceState(outState);
 		outState.putString("tab", mTabHost.getCurrentTabTag());
 	}
-
-	public void login(View view) {
-		Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
-		startActivity(intent);
-	}
-
-	/**
+    
+    /**
 	 * This is a helper class that implements a generic mechanism for
 	 * associating fragments with the tabs in a tab host. It relies on a trick.
 	 * Normally a tab host has a simple API for supplying a View or Intent that
@@ -123,7 +104,7 @@ public class MainActivity extends FragmentActivity {
 				Bundle args) {
 			TabSpec tabSpec = mTabHost.newTabSpec(title);
 			View tabIndicator = LayoutInflater.from(mActivity).inflate(
-					R.layout.tab_indicator, tabWidget, false);
+					R.layout.login_tab_indicator, tabWidget, false);
 			TextView titleView = (TextView) tabIndicator
 					.findViewById(R.id.title);
 			titleView.setText(title);

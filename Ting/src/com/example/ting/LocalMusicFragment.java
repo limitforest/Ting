@@ -6,7 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class SecondFragment extends Fragment {
+public class LocalMusicFragment extends Fragment {
 
   
     @Override
@@ -18,7 +18,7 @@ public class SecondFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState) {
-    	 View v = inflater.inflate(R.layout.second_layout, container, false);
+    	 View v = inflater.inflate(R.layout.first_fragment, container, false);
         return v;
     }
 }

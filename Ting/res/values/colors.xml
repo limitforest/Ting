@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="color_artist_name">#ffd5d5d5</color>
+     <color name="listview_selector_background">#ff279de7</color>
      <color name="color_minibar_btn_press">#ff279ce7</color>
      <color name="color_transparent">#00000000</color>
+     <color name="white">#ffffffff</color>
+    <color name="black">#ff000000</color>
+    <color name="bg_color">#269CE6</color>
 </resources>

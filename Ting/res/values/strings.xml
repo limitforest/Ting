@@ -9,5 +9,11 @@
     <string name="online_music">在线音乐</string>
     <string name="search">搜索</string>
     <string name="slogan">百度音乐，与我同行</string>
+    <string name="login">登 录</string>
+    <string name="register">注 册</string>
+    <string name="title_activity_login">登录</string>
+    <string name="ordinary_login">普通登录</string>
+    <string name="phone_login">手机号登录</string>
+    <string name="title_activity_register">RegisterActivity</string>
 
 </resources>

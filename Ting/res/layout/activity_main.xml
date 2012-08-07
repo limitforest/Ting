@@ -20,17 +20,7 @@
                 android:layout_height="match_parent"
                 android:layout_above="@+id/play_mini_bar" >
 
-                <LinearLayout
-                    android:id="@+id/tab2"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" >
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/tab3"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" >
-                </LinearLayout>
+               
             </FrameLayout>
 
             <include layout="@layout/paly_mini_bar"/>

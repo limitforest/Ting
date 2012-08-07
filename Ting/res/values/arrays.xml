@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="search_hotkey">
+        <item >周杰伦</item>
+        <item >陈奕迅</item>
+        <item >梁静茹</item>
+        <item >曲婉婷</item>
+        <item >王菲</item>
+    </string-array>
+
+</resources>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+     android:background="@drawable/sign_in_registration_black" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true" 
+        android:layout_alignParentBottom="true"
+        android:gravity="center_horizontal"
+        android:layout_marginBottom="30dp"
+       >
+
+        <Button
+            android:id="@+id/btn_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="5dp"
+            android:textSize="16sp"
+            android:gravity="center"
+            android:textColor="@color/text_login_register"
+            android:background="@drawable/btn_sign_in_registration_selector"
+            android:text="@string/login" 
+            android:onClick="login"/>
+
+        <Button
+            android:id="@+id/btn_register"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+             android:layout_marginLeft="5dp"
+            android:layout_marginRight="15dp"
+            android:textSize="16sp"
+            android:gravity="center"
+            android:textColor="@color/text_login_register"
+            android:background="@drawable/btn_sign_in_registration_selector"
+            android:text="@string/register"
+            />
+    </LinearLayout>
+
+</RelativeLayout>

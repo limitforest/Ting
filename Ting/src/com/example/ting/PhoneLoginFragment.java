@@ -6,7 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class FirstFragment extends Fragment {
+public class PhoneLoginFragment extends Fragment {
 
   
     @Override
@@ -18,7 +18,7 @@ public class FirstFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState) {
-    	 View v = inflater.inflate(R.layout.first_fragment, container, false);
+    	 View v = inflater.inflate(R.layout.frgment_phone_login, container, false);
         return v;
     }
 }
