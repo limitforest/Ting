@@ -14,5 +14,9 @@
         <item name="android:textStyle">normal</item>
         <item name="android:textColor">#ffffff</item>
     </style>
-
+<style name="SmallTextAppearance">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">#ffffff</item>
+    </style>
 </resources>

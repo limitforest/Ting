@@ -11,6 +11,7 @@ import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TabHost;
 import android.widget.TabHost.TabSpec;
 import android.widget.TabWidget;
@@ -34,13 +35,13 @@ public class MainActivity extends FragmentActivity {
 		tabWidget = (TabWidget) findViewById(android.R.id.tabs);
 
 		mTabManager.addTab(tabWidget, getString(R.string.local_music),
-				LocalMusicFragment.class, null);
+				LocalMusicFragment.class, null,false,true);
 		mTabManager.addTab(tabWidget, getString(R.string.my_music),
-				MyMusicFragment.class, null);
+				MyMusicFragment.class, null,false,true);
 		mTabManager.addTab(tabWidget, getString(R.string.online_music),
-				OnlineMusicFragment.class, null);
+				OnlineMusicFragment.class, null,false,true);
 		mTabManager.addTab(tabWidget, getString(R.string.search),
-				SearchFragment.class, null);
+				SearchFragment.class, null,false,false);
 
 		if (savedInstanceState != null) {
 			mTabHost.setCurrentTabByTag(savedInstanceState.getString("tab"));
@@ -120,12 +121,19 @@ public class MainActivity extends FragmentActivity {
 		}
 
 		public void addTab(TabWidget tabWidget, String title, Class<?> clss,
-				Bundle args) {
+				Bundle args,boolean left ,boolean right) {
 			TabSpec tabSpec = mTabHost.newTabSpec(title);
 			View tabIndicator = LayoutInflater.from(mActivity).inflate(
 					R.layout.tab_indicator, tabWidget, false);
 			TextView titleView = (TextView) tabIndicator
 					.findViewById(R.id.title);
+			ImageView imageView = (ImageView) tabIndicator.findViewById(R.id.division_line_left);
+			if(left)
+				imageView.setVisibility(View.VISIBLE);
+			imageView = (ImageView) tabIndicator.findViewById(R.id.division_line_right);
+			if(right)
+				imageView.setVisibility(View.VISIBLE);
+			
 			titleView.setText(title);
 			tabSpec.setIndicator(tabIndicator);
 			tabSpec.setContent(new DummyTabFactory(mActivity));

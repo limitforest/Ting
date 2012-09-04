@@ -7,4 +7,11 @@
      <color name="white">#ffffffff</color>
     <color name="black">#ff000000</color>
     <color name="bg_color">#269CE6</color>
+    <color name="separator_line_color_1">#1F7CB8</color>
+    <color name="separator_line_color_2">#52afeb</color>
+    <color name="gridview_separator_line_color">#cdcdcd</color>
+    <color name="title_bar_bg_color">#383842</color>
+    <color name="blue">#ff279ce7</color>
+    <color name="press_color">#47CAFF</color>
+    
 </resources>
