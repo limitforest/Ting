@@ -15,5 +15,16 @@
     <string name="ordinary_login">普通登录</string>
     <string name="phone_login">手机号登录</string>
     <string name="title_activity_register">RegisterActivity</string>
+    
+    
+    <string name="all_songs">全部歌曲</string>
+    <string name="folder">文件夹</string>
+    <string name="my_download">我的下载</string>
+    <string name="newlist">新建列表</string>
+    <string name="recently_added">最近添加</string>
+    <string name="recently_played">最近播放</string>
+    <string name="singer">歌手</string>
+    <string name="the_album">专辑</string>
+    <string name="the_local_list">本地列表</string>
 
 </resources>

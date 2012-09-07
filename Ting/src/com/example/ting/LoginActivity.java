@@ -3,6 +3,7 @@ package com.example.ting;
 import java.util.HashMap;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -44,7 +45,8 @@ public class LoginActivity extends FragmentActivity {
 		super.onSaveInstanceState(outState);
 		outState.putString("tab", mTabHost.getCurrentTabTag());
 	}
-    
+   
+
     /**
 	 * This is a helper class that implements a generic mechanism for
 	 * associating fragments with the tabs in a tab host. It relies on a trick.

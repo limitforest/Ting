@@ -13,5 +13,9 @@
     <color name="title_bar_bg_color">#383842</color>
     <color name="blue">#ff279ce7</color>
     <color name="press_color">#47CAFF</color>
+    <color name="divider_line_color">#CDCDCD</color>
+    <color name="grid_view_text2_color">#A6A6A6</color>
+    <color name="local_music_fragment_bg_color">#E6E6E6</color>
+    <color name="title_bar_bg_color">#33333D</color>
     
 </resources>

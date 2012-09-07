@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <!-- Pressed -->
-    <item android:drawable="@color/press_color" android:state_pressed="true"/>
+     <item android:drawable="@drawable/btn_pressed"  android:state_pressed="true"/>
+    <item android:drawable="@drawable/tab_press"  android:state_selected="true"/>
+     <item android:drawable="@drawable/tab_normal"  />
     
-    <!-- Non focused states -->
-    <item android:drawable="@color/blue"   />
-
+  
     
 
 </selector>

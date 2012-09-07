@@ -2,40 +2,41 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="horizontal" >
+    android:orientation="vertical" >
 
-    <TabHost
-        android:id="@android:id/tabhost"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="1" >
+   
+    
+   
 
-        <RelativeLayout
+        <TabHost
+            android:id="@android:id/tabhost"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" >
+            android:layout_height="0dp"
+            android:layout_weight="1" >
 
-            <FrameLayout
-                android:id="@android:id/tabcontent"
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_above="@+id/play_mini_bar" >
+                android:layout_height="match_parent" >
 
-               
-            </FrameLayout>
+                <FrameLayout
+                    android:id="@android:id/tabcontent"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_above="@+id/play_mini_bar" >
+                </FrameLayout>
 
-            <include layout="@layout/paly_mini_bar"/>
+                <include layout="@layout/paly_mini_bar" />
 
-            <TabWidget
-                android:id="@android:id/tabs"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/btn_height"
-                android:layout_alignParentBottom="true"
-                android:background="@drawable/general_menu_bg"
-               >
-
-                
-            </TabWidget>
-        </RelativeLayout>
-    </TabHost>
+                <TabWidget
+                    android:id="@android:id/tabs"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/btn_height"
+                    android:layout_alignParentBottom="true"
+                    android:background="@drawable/general_menu_bg"
+                    android:divider="@drawable/line_button_division_vertical" >
+                </TabWidget>
+            </RelativeLayout>
+        </TabHost>
+   
 
 </LinearLayout>

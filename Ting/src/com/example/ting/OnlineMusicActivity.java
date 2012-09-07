@@ -7,6 +7,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import android.app.Activity;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
@@ -19,11 +20,12 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
+import android.widget.TextView;
 
 import com.viewpagerindicator.CirclePageIndicator;
 import com.viewpagerindicator.PageIndicator;
 
-public class OnlineMusicFragment extends Fragment {
+public class OnlineMusicActivity extends Activity {
 	PagerAdapter mAdapter;
 	ViewPager mPager;
 	PageIndicator mIndicator;
@@ -31,38 +33,33 @@ public class OnlineMusicFragment extends Fragment {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-
-	}
-
-	@Override
-	public View onCreateView(LayoutInflater inflater, ViewGroup container,
-			Bundle savedInstanceState) {
-		View v = inflater.inflate(R.layout.fragment_online, container, false);
-
+setContentView(R.layout.activity_online);
+setTitileBar(getString(R.string.online_music));
 		String[] files = null;
 		String dir = "album";
 		try {
-			String[] temp = getActivity().getAssets().list(dir);
+			String[] temp = getAssets().list(dir);
 			files = new String[temp.length];
 			for (int j = 0; j < temp.length; j++) {
 				files[j] = dir + "/" + temp[j];
 
 			}
 
-			InputStream is = getActivity().getAssets().open(files[0]);
+			InputStream is = getAssets().open(files[0]);
 
-			ImageView image = new ImageView(getActivity());
+			ImageView image = new ImageView(this);
 			Bitmap bitmap = BitmapFactory.decodeStream(is);
 			image.setImageBitmap(bitmap);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		LayoutInflater inflater = getLayoutInflater();
+		
 		mAdapter = new MyPagerAdapter(inflater, files);
-		mPager = (ViewPager) v.findViewById(R.id.pager);
+		mPager = (ViewPager) findViewById(R.id.pager);
 		mPager.setAdapter(mAdapter);
 
-		CirclePageIndicator indicator = (CirclePageIndicator) v
-				.findViewById(R.id.indicator);
+		CirclePageIndicator indicator = (CirclePageIndicator) findViewById(R.id.indicator);
 		mIndicator = indicator;
 		indicator.setViewPager(mPager);
 		indicator.setFillColor(getResources().getColor(R.color.bg_color));
@@ -82,15 +79,19 @@ public class OnlineMusicFragment extends Fragment {
 			list.add(map);
 		}
 
-		SimpleAdapter adapter = new SimpleAdapter(getActivity(), list,
+		SimpleAdapter adapter = new SimpleAdapter(this, list,
 				R.layout.online_music_textview, new String[] { "title",
 						"subtitle" }, new int[] { R.id.textView1,
 						R.id.textView2 });
-		ListView lists = (ListView) v.findViewById(R.id.listview);
+		ListView lists = (ListView)findViewById(R.id.listview);
 		lists.setAdapter(adapter);
-		return v;
+		
+		
 	}
-
+	void setTitileBar(CharSequence text) {
+		TextView view = (TextView) findViewById(R.id.activity_title_bar);
+		view.setText(text);
+	}
 	class MyPagerAdapter extends PagerAdapter {
 		LayoutInflater inflater;
 		String[] bitmapPath;
@@ -147,21 +148,21 @@ public class OnlineMusicFragment extends Fragment {
 				int index = position * 3;
 				int len = bitmapPath.length;
 				if (index < len) {
-					is = getActivity().getAssets().open(bitmapPath[index]);
+					is = getAssets().open(bitmapPath[index]);
 					bitmap = BitmapFactory.decodeStream(is);
 					view1.setImageBitmap(bitmap);
 				}
 
 				index++;
 				if (index < len) {
-					is = getActivity().getAssets().open(bitmapPath[index]);
+					is = getAssets().open(bitmapPath[index]);
 					bitmap = BitmapFactory.decodeStream(is);
 					view2.setImageBitmap(bitmap);
 				}
 
 				index++;
 				if (index < len) {
-					is = getActivity().getAssets().open(bitmapPath[index]);
+					is = getAssets().open(bitmapPath[index]);
 					bitmap = BitmapFactory.decodeStream(is);
 					view3.setImageBitmap(bitmap);
 				}
