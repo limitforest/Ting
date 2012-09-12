@@ -167,6 +167,9 @@ public class LocalMusicGridFragment extends Fragment implements OnItemClickListe
 			ft.addToBackStack(null);
 			ft.commit();
 
+			LocalMusicActivity activity = (LocalMusicActivity) getActivity();
+			activity.setTitileBar(getString(R.string.all_songs));
+			
 		}
 
 	}

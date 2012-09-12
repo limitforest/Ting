@@ -26,5 +26,12 @@
     <string name="singer">歌手</string>
     <string name="the_album">专辑</string>
     <string name="the_local_list">本地列表</string>
+    <string name="all_songs">全部歌曲</string>
+    <string name="loading">载入中，请稍候</string>
+    
+    <string name="exit">退出</string>
+    <string name="exit_confirm">确定要退出百度音乐吗?</string>
+    <string name="confirm">确认</string>
+    <string name="cancel">取消</string>
 
 </resources>

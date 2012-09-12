@@ -1,13 +1,15 @@
 package com.example.ting;
 
-import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.Dialog;
 import android.app.TabActivity;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.TabHost;
 import android.widget.TabHost.OnTabChangeListener;
 import android.widget.TabHost.TabSpec;
@@ -41,6 +43,43 @@ mTabHost = getTabHost();
 		}
 	}
 
+	@Override
+	public boolean dispatchKeyEvent(KeyEvent event) {
+		if(event.getKeyCode()==KeyEvent.KEYCODE_BACK){
+			 if (event.getAction() == KeyEvent.ACTION_DOWN && event.getRepeatCount() == 0) {
+				//ÍË³ö¶Ô»°¿ò
+					View view = getLayoutInflater().inflate(R.layout.exit_dialog, null);
+					final Dialog dialog = new Dialog(this,R.style.dialogStyle);
+					
+					dialog.show();
+					TextView view1 = (TextView) view.findViewById(R.id.textView3);
+					TextView view2 = (TextView) view.findViewById(R.id.textView4);
+					
+					view1.setOnClickListener(new OnClickListener() {
+						
+						@Override
+						public void onClick(View v) {
+							dialog.dismiss();
+							finish();
+						}
+					});
+					view2.setOnClickListener(new OnClickListener() {
+						
+						@Override
+						public void onClick(View v) {
+							dialog.dismiss();
+						}
+					});
+					
+					
+					return true;
+			 }
+		}
+		
+		return super.dispatchKeyEvent(event);
+	}
+	
+	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		getMenuInflater().inflate(R.menu.activity_main, menu);
